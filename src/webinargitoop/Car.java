@@ -1,12 +1,13 @@
 package webinargitoop;
 
-public class Car {
+public class Car extends Transport implements Rideable {
     String brand;
     int horsePower;
     boolean isAwd;
     float acceleration;
     Car(){
         this("mazda", 190, false, 10);
+
     }
 
     public Car(String brand, int horsePower, boolean isAwd, float acceleration) {
@@ -14,6 +15,7 @@ public class Car {
         this.horsePower = horsePower;
         this.isAwd = isAwd;
         this.acceleration = acceleration;
+        type = "Car";
     }
 
     void start(){
@@ -29,4 +31,8 @@ public class Car {
     }
 
 
+    @Override
+    public void ride() {
+        System.out.println("Riding car");
+    }
 }
