@@ -7,10 +7,7 @@ public class TicTacToe {
 
     String[][] field;
     String nowPlayer;
-    public ticTacToe(){
-        newGame();
 
-    }
 
     void newGame(){
         field = new String[][] {{"-", "-", "-"}, {"-", "-", "-"}, {"-", "-", "-"}};
