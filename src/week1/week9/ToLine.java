@@ -1,6 +1,7 @@
 package week1.week9;
 
 public class ToLine {
+
     int[][] data = {{1, 2}, {3, 4}, {5, 6}};
 
     public ToLine(int[][] data) {
@@ -17,5 +18,6 @@ public class ToLine {
             count += datum.length;
         }
         return result;
+
     }
 }
