@@ -1,5 +1,6 @@
 package week1.week11;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -31,21 +32,38 @@ public class TicTacToe {
 //        if (map[0][0].equals(playerField) && map[1][1].equals(playerField) && map[2][2].equals(playerField))            return true;
 //        if (map[0][2].equals(playerField) && map[1][1].equals(playerField) && map[2][0].equals(playerField))            return true;
 
+//        for (int i = 0; i < MAP_SIZE; i++) {
+//            boolean check = true;
+//            for (int j = 0; j < MAP_SIZE; j++) {
+//                if (map[i][j].equals(playerField)) check = false;
+//            }
+//            if (check) return true;
+//        }
+//
+//        for (int i = 0; i < MAP_SIZE; i++) {
+////            boolean check = true;
+//            for (int j = 0; j < MAP_SIZE; j++) {
+//                if (map[j][i].equals(playerField) || map[j][i].equals(EMPTY_FIELD)) return true;
+//            }
+////            if (check) return true;
+//        }
+        String[] sX = new String[MAP_SIZE];
+        String[] sO = new String[MAP_SIZE];
+        String[] winLine = new String[MAP_SIZE];
         for (int i = 0; i < MAP_SIZE; i++) {
-            boolean check = true;
-            for (int j = 0; j < MAP_SIZE; j++) {
-                if (map[i][j].equals(playerField)) check = false;
-            }
-            if (check) return true;
+            sX[i] = "X";
         }
 
         for (int i = 0; i < MAP_SIZE; i++) {
-//            boolean check = true;
-            for (int j = 0; j < MAP_SIZE; j++) {
-                if (map[j][i].equals(playerField) || map[j][i].equals(EMPTY_FIELD)) return true;
-            }
-//            if (check) return true;
+            sO[i] = "O";
         }
+
+        for (int i = 0; i < MAP_SIZE; ) {
+            for (int j = 0; j < MAP_SIZE; j++) {
+                winLine[i] = map[i][j];
+            }
+        }
+        System.out.println(Arrays.toString(winLine));
 
         return false;
 

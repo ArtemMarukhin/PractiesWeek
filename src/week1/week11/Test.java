@@ -15,23 +15,23 @@ public class Test {
     public static void main(String[] args) {
 //        newGame();
 //        printMap();
-        String[] sX = new String[MAP_SIZE];
-        String[] sO = new String[MAP_SIZE];
-        String[] winLine = new String[MAP_SIZE];
-        for (int i = 0; i < MAP_SIZE; i++) {
-            sX[i] = "X";
-        }
-
-        for (int i = 0; i < MAP_SIZE; i++) {
-            sO[i] = "O";
-        }
-
-        for (int i = 0; i < MAP_SIZE; i++) {
-            for (int j = 0; j < MAP_SIZE; j++) {
-                winLine[i] = map[i][j];
-            }
-        }
-        System.out.println(Arrays.toString(winLine));
+//        String[] sX = new String[MAP_SIZE];
+//        String[] sO = new String[MAP_SIZE];
+//        String[] winLine = new String[MAP_SIZE];
+//        for (int i = 0; i < MAP_SIZE; i++) {
+//            sX[i] = "X";
+//        }
+//
+//        for (int i = 0; i < MAP_SIZE; i++) {
+//            sO[i] = "O";
+//        }
+//
+//        for (int i = 0; i < MAP_SIZE; ) {
+//            for (int j = 0; j < MAP_SIZE; j++) {
+//                winLine[i] = map[i][j];
+//            }
+//        }
+//        System.out.println(Arrays.toString(winLine));
 
     }
     public static void newGame (){
