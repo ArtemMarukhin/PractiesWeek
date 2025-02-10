@@ -31,25 +31,20 @@ public class TicTacToe {
 //        if (map[0][0] == playerField && map[1][1] == playerField && map[2][2] == playerField)            return true;
 //        if (map[0][2] == playerField && map[1][1] == playerField && map[2][0] == playerField)            return true;
 
-        char[] result = new char[map.length * map[0].length];
-        int count = 0;
-        for (char[] datum: map) {
-            for (int i = 0; i < datum.length; i++) {
-                result[count + i] = datum[i];
+        for (int i = 0; i < MAP_SIZE; i++) {
+            boolean check = true;
+            for (int j = 0; j < MAP_SIZE; j++) {
+                if (map[i][j] == playerField || map[i][j] == EMPTY_FIELD) check = false;
             }
-            count += datum.length;
+            if (check) return true;
         }
 
-        while (true){
-            int countX = 0;
-            for (int i = 0; i < result.length; i += 3) {
-
-                if (result[i] == playerField){
-                    countX++;
-                    System.out.println("gh");
-                } return true;
+        for (int i = 0; i < 3; i++) {
+            boolean check = true;
+            for (int j = 0; j < 3; j++) {
+                if (map[j][i] == playerField || map[j][i] == EMPTY_FIELD) check = false;
             }
-            System.out.println(result);
+            if (check) return true;
         }
 
         return false;
