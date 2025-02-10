@@ -39,9 +39,9 @@ public class TicTacToe {
             if (check) return true;
         }
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < MAP_SIZE; i++) {
             boolean check = true;
-            for (int j = 0; j < 3; j++) {
+            for (int j = 0; j < MAP_SIZE; j++) {
                 if (map[j][i].equals(playerField) || map[j][i].equals(EMPTY_FIELD)) check = false;
             }
             if (check) return true;
