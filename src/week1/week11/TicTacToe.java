@@ -20,31 +20,31 @@ public class TicTacToe {
 
 
     public static boolean checkWin(String playerField){
-//        if (map[0][0] == playerField && map[0][1] == playerField && map[0][2] == playerField)            return true;
-//        if (map[1][0] == playerField && map[1][1] == playerField && map[1][2] == playerField)            return true;
-//        if (map[2][0] == playerField && map[2][1] == playerField && map[2][2] == playerField)            return true;
+//        if (map[0][0].equals(playerField) && map[0][1].equals(playerField) && map[0][2].equals(playerField))            return true;
+//        if (map[1][0].equals(playerField) && map[1][1].equals(playerField) && map[1][2].equals(playerField))            return true;
+//        if (map[2][0].equals(playerField) && map[2][1].equals(playerField) && map[2][2].equals(playerField))            return true;
 //
-//        if (map[0][0] == playerField && map[1][0] == playerField && map[2][0] == playerField)            return true;
-//        if (map[0][1] == playerField && map[1][1] == playerField && map[2][1] == playerField)            return true;
-//        if (map[0][2] == playerField && map[1][2] == playerField && map[2][2] == playerField)            return true;
+//        if (map[0][0].equals(playerField) && map[1][0].equals(playerField) && map[2][0].equals(playerField))            return true;
+//        if (map[0][1].equals(playerField) && map[1][1].equals(playerField) && map[2][1].equals(playerField))            return true;
+//        if (map[0][2].equals(playerField) && map[1][2].equals(playerField) && map[2][2].equals(playerField))            return true;
 //
-//        if (map[0][0] == playerField && map[1][1] == playerField && map[2][2] == playerField)            return true;
-//        if (map[0][2] == playerField && map[1][1] == playerField && map[2][0] == playerField)            return true;
+//        if (map[0][0].equals(playerField) && map[1][1].equals(playerField) && map[2][2].equals(playerField))            return true;
+//        if (map[0][2].equals(playerField) && map[1][1].equals(playerField) && map[2][0].equals(playerField))            return true;
 
         for (int i = 0; i < MAP_SIZE; i++) {
             boolean check = true;
             for (int j = 0; j < MAP_SIZE; j++) {
-                if (map[i][j].equals(playerField) || map[i][j].equals(EMPTY_FIELD)) check = false;
+                if (map[i][j].equals(playerField)) check = false;
             }
             if (check) return true;
         }
 
         for (int i = 0; i < MAP_SIZE; i++) {
-            boolean check = true;
+//            boolean check = true;
             for (int j = 0; j < MAP_SIZE; j++) {
-                if (map[j][i].equals(playerField) || map[j][i].equals(EMPTY_FIELD)) check = false;
+                if (map[j][i].equals(playerField) || map[j][i].equals(EMPTY_FIELD)) return true;
             }
-            if (check) return true;
+//            if (check) return true;
         }
 
         return false;

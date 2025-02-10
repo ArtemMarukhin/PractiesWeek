@@ -1,42 +1,41 @@
 package week1.week11;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Test {
     static Scanner scanner;
-    static char [][] map;
+    static String [][] map;
     static final int MAP_SIZE = 3;
-    static final char EMPTY_FIELD = '1';
-    static final char X_FIELD = 'X';
-    static final char O_FIELD = 'O';
+    static final String EMPTY_FIELD = "1";
+    static final String X_FIELD = "X";
+    static final String O_FIELD = "O";
     static boolean turn = true;
     static boolean endGame = false;
     public static void main(String[] args) {
-        newGame();
-        printMap();
-
-        char[] result = new char[map.length * map[0].length];
-        int count = 0;
-        for (char[] datum: map) {
-            for (int i = 0; i < datum.length; i++) {
-                result[count + i] = datum[i];
-            }
-            count += datum.length;
+//        newGame();
+//        printMap();
+        String[] sX = new String[MAP_SIZE];
+        String[] sO = new String[MAP_SIZE];
+        String[] winLine = new String[MAP_SIZE];
+        for (int i = 0; i < MAP_SIZE; i++) {
+            sX[i] = "X";
         }
-        int countX = 0;
-        while (countX != MAP_SIZE){
-        for (int i = 0; i < result.length; i += 3) {
 
-            if (result[i] == '1'){
-                countX++;
-                System.out.println("gh");
+        for (int i = 0; i < MAP_SIZE; i++) {
+            sO[i] = "O";
+        }
+
+        for (int i = 0; i < MAP_SIZE; i++) {
+            for (int j = 0; j < MAP_SIZE; j++) {
+                winLine[i] = map[i][j];
             }
         }
-        System.out.println(result);
-        }
+        System.out.println(Arrays.toString(winLine));
+
     }
     public static void newGame (){
-        map = new char[MAP_SIZE][MAP_SIZE];
+        map = new String[MAP_SIZE][MAP_SIZE];
         for (int i = 0; i < MAP_SIZE; i++) {
             for (int j = 0; j < MAP_SIZE; j++) {
                 map[i][j] = EMPTY_FIELD;
