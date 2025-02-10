@@ -12,12 +12,17 @@ public class TicTacToe {
     static final String O_FIELD = "O";
     static boolean turn = true;
     static boolean endGame = false;
+    static String[] winStringX = new String[MAP_SIZE];
+    static String[] winStringO = new String[MAP_SIZE];
+
+
 
     public static void main(String[] args) {
         newGame();
         getField();
         startGame();
     }
+
 
 
     public static boolean checkWin(String playerField){
@@ -41,29 +46,26 @@ public class TicTacToe {
 //        }
 //
 //        for (int i = 0; i < MAP_SIZE; i++) {
-////            boolean check = true;
+//            boolean check = true;
 //            for (int j = 0; j < MAP_SIZE; j++) {
-//                if (map[j][i].equals(playerField) || map[j][i].equals(EMPTY_FIELD)) return true;
+//                if (map[j][i].equals(playerField)) check = false;
 //            }
-////            if (check) return true;
+//            if (check) return true;
 //        }
-        String[] sX = new String[MAP_SIZE];
-        String[] sO = new String[MAP_SIZE];
-        String[] winLine = new String[MAP_SIZE];
-        for (int i = 0; i < MAP_SIZE; i++) {
-            sX[i] = "X";
-        }
 
-        for (int i = 0; i < MAP_SIZE; i++) {
-            sO[i] = "O";
-        }
 
-        for (int i = 0; i < MAP_SIZE; ) {
-            for (int j = 0; j < MAP_SIZE; j++) {
-                winLine[i] = map[i][j];
-            }
+
+        for (int i = 0; i < map.length; i++){
+            for (int j = 0; j < map[i].length; j++){
+
+                // Set the current character using charAt
+                String curr = map[i][j].substring(0, 1);
+                if (curr.equals(winStringX)) return true;
+
+                // Print it out
+                System.out.print(curr);
+            } //end inner for
         }
-        System.out.println(Arrays.toString(winLine));
 
         return false;
 
@@ -163,6 +165,14 @@ public class TicTacToe {
                 map[i][j] = EMPTY_FIELD;
             }
         }
+        for (int i = 0; i < MAP_SIZE; i++) {
+            winStringX[i] = "X";
+        }
+        for (int i = 0; i < MAP_SIZE; i++) {
+            winStringO[i] = "O";
+        }
+        System.out.println(Arrays.toString(winStringX));
+        System.out.println(Arrays.toString(winStringO));
         scanner = new Scanner(System.in);
     }
     
